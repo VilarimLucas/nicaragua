@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Página com Música de Fundo</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Estilização opcional para o botão de controle */
+        .audio-control {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <!-- Conteúdo da sua página -->
+    <div class="container">
+        <h1>Bem-vindo ao Meu Site</h1>
+        <p>Explore o conteúdo enquanto desfruta da música de fundo.</p>
+    </div>
+
+    <!-- Elemento de Áudio -->
+    <audio id="background-music" autoplay loop>
+        <source src="audio/07 los chicos de ayer.mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+    <!-- Controles de Áudio (Opcional) -->
+    <div class="audio-control">
+        <button class="btn btn-primary" onclick="toggleMusic()">
+            <span id="music-icon" class="bi bi-play-circle"></span> Música
+        </button>
+    </div>
+
+    <!-- Bootstrap JS e dependências -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Script para Controlar a Música -->
+    <script>
+        function toggleMusic() {
+            var music = document.getElementById("background-music");
+            var icon = document.getElementById("music-icon");
+            if (music.paused) {
+                music.play();
+                icon.classList.remove("bi-play-circle");
+                icon.classList.add("bi-pause-circle");
+            } else {
+                music.pause();
+                icon.classList.remove("bi-pause-circle");
+                icon.classList.add("bi-play-circle");
+            }
+        }
+
+        // Tentar reproduzir a música automaticamente quando a página carrega
+        window.addEventListener('load', function() {
+            var music = document.getElementById("background-music");
+            var playPromise = music.play();
+
+            if (playPromise !== undefined) {
+                playPromise.then(_ => {
+                    // Reproduziu automaticamente
+                }).catch(error => {
+                    // Autoplay foi bloqueado, mostre controles para o usuário
+                    console.log("Autoplay bloqueado. O usuário precisa interagir para reproduzir a música.");
+                });
+            }
+        });
+    </script>
+</body>
+</html>

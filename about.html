@@ -1,85 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Explorer - Free Bootstrap 4 Template by Colorlib</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
+<head>
+  <title>Explorer - Free Bootstrap 4 Template by Colorlib</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="css/aos.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/ionicons.min.css">
+  <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+  <link rel="stylesheet" href="css/animate.css">
 
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="css/jquery.timepicker.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
 
-    
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
+  <link rel="stylesheet" href="css/aos.css">
 
-	<div id="colorlib-page">
-		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
-		<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
+  <link rel="stylesheet" href="css/ionicons.min.css">
+
+  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="css/jquery.timepicker.css">
+
+
+  <link rel="stylesheet" href="css/flaticon.css">
+  <link rel="stylesheet" href="css/icomoon.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+
+  <!-- Botão de Música -->
+  <style>
+    /* Estilização opcional para o botão de controle */
+    .audio-control {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+  </style>
+  <audio id="background-music" autoplay loop>
+    <source src="audio/07 los chicos de ayer.mp3" type="audio/mpeg">
+    Seu navegador não suporta o elemento de áudio.
+  </audio>
+
+  <!-- Controles de Áudio (Opcional) -->
+  <div class="audio-control">
+    <button class="btn btn-primary" onclick="toggleMusic()">
+      <span id="music-icon" class="icon-play-circle"></span> Música
+    </button>
+  </div>
+
+  <!-- Script para Controlar a Música -->
+  <script>
+    function toggleMusic() {
+      var music = document.getElementById("background-music");
+      var icon = document.getElementById("music-icon");
+      if (music.paused) {
+        music.play();
+        icon.classList.remove("icon-play-circle");
+        icon.classList.add("icon-pause-circle");
+      } else {
+        music.pause();
+        icon.classList.remove("icon-pause-circle");
+        icon.classList.add("icon-play-circle");
+      }
+    }
+
+    // Tentar reproduzir a música automaticamente quando a página carrega
+    window.addEventListener('load', function () {
+      var music = document.getElementById("background-music");
+      var playPromise = music.play();
+
+      if (playPromise !== undefined) {
+        playPromise.then(_ => {
+          // Reproduziu automaticamente
+        }).catch(error => {
+          // Autoplay foi bloqueado, mostre controles para o usuário
+          console.log("Autoplay bloqueado. O usuário precisa interagir para reproduzir a música.");
+        });
+      }
+    });
+  </script>
+
+  <div id="colorlib-page">
+    <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+    <aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
       <h1 id="colorlib-logo"><a href="index.html">Nicarágua<span>.</span></a></h1>
-			<nav id="colorlib-main-menu" role="navigation">
-				<ul>
-					<li class="colorlib-active"><a href="index.html">Início</a></li>
-					<li><a href="photography.html">Fotografia</a></li>
-					<li><a href="travel.html">Plano de Viagens</a></li>
-					<li><a href="fashion.html">Danças</a></li>
-					<li><a href="fashion.html">Economia</a></li>
-					<li><a href="about.html">Sobre</a></li>
-					<li><a href="contact.html">Comidas</a></li>
-				</ul>
-			</nav>
+      <nav id="colorlib-main-menu" role="navigation">
+        <ul>
+          <li class="colorlib-active"><a href="index.html">Início</a></li>
+          <li><a href="photography.html">Fotografia</a></li>
+          <li><a href="travel.html">Plano de Viagens</a></li>
+          <li><a href="fashion.html">Danças</a></li>
+          <li><a href="fashion.html">Economia</a></li>
+          <li><a href="about.html">Sobre</a></li>
+          <li><a href="contact.html">Comidas</a></li>
+        </ul>
+      </nav>
 
-			<div class="colorlib-footer">
-				<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-			  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-				<!--ul>
+      <div class="colorlib-footer">
+        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          Copyright &copy;
+          <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i
+            class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+          <!--ul>
 					<li><a href="#"><i class="icon-facebook"></i></a></li>
 					<li><a href="#"><i class="icon-twitter"></i></a></li>
 					<li><a href="#"><i class="icon-instagram"></i></a></li>
 					<li><a href="#"><i class="icon-linkedin"></i></a></li>
 				</ul-->
-			</div>
-		</aside> <!-- END COLORLIB-ASIDE -->
-		<div id="colorlib-main">
-			<div class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url(images/bg_4.jpg);" data-stellar-background-ratio="0.5">
-				<div class="overlay"></div>
-				<div class="js-fullheight d-flex justify-content-center align-items-center">
-					<div class="col-md-8 text text-center">
-						<div class="img mb-4" style="background-image: url(images/author.jpg);"></div>
-						<div class="desc">
-							<h2 class="subheading text-dark">Feira das Nações</h2>
-							<h1 class="mb-4">Nicarágua</h1>
-							<p class="mb-4 text-dark">A Nicarágua é um país da América Central, conhecido por sua rica história, cultura e biodiversidade. Sua economia é baseada principalmente na agricultura, com o café e o tabaco entre seus principais produtos de exportação. Politicamente, o país tem enfrentado desafios de governança, com controvérsias em torno da administração do presidente Daniel Ortega. Além disso, a Nicarágua possui paisagens naturais impressionantes, como vulcões e lagos.</p>
-							<ul class="ftco-social mt-3">
-                <li class="ftco-animate"><a href="https://www.aljazeera.com/news/2024/8/19/nicaragua-bans-1500-ngos-in-latest-crackdown-against-civil-society" target="_blank"><span class="icon-globe"></span></a></li>
-                <li class="ftco-animate"><a href="https://www.hrw.org/world-report/2024/country-chapters/nicaragua" target="_blank"><span class="icon-book"></span></a></li>
-                <li class="ftco-animate"><a href="https://en.wikipedia.org/wiki/2024_in_Nicaragua" target="_blank"><span class="icon-info"></span></a></li>
+      </div>
+    </aside> <!-- END COLORLIB-ASIDE -->
+    <div id="colorlib-main">
+      <div class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url(images/bg_4.jpg);"
+        data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="js-fullheight d-flex justify-content-center align-items-center">
+          <div class="col-md-8 text text-center">
+            <div class="img mb-4" style="background-image: url(images/author.jpg);"></div>
+            <div class="desc">
+              <h2 class="subheading text-dark">Feira das Nações</h2>
+              <h1 class="mb-4">Nicarágua</h1>
+              <p class="mb-4 text-dark">A Nicarágua é um país da América Central, conhecido por sua rica história,
+                cultura e biodiversidade. Sua economia é baseada principalmente na agricultura, com o café e o tabaco
+                entre seus principais produtos de exportação. Politicamente, o país tem enfrentado desafios de
+                governança, com controvérsias em torno da administração do presidente Daniel Ortega. Além disso, a
+                Nicarágua possui paisagens naturais impressionantes, como vulcões e lagos.</p>
+              <ul class="ftco-social mt-3">
+                <li class="ftco-animate"><a
+                    href="https://www.aljazeera.com/news/2024/8/19/nicaragua-bans-1500-ngos-in-latest-crackdown-against-civil-society"
+                    target="_blank"><span class="icon-globe"></span></a></li>
+                <li class="ftco-animate"><a href="https://www.hrw.org/world-report/2024/country-chapters/nicaragua"
+                    target="_blank"><span class="icon-book"></span></a></li>
+                <li class="ftco-animate"><a href="https://en.wikipedia.org/wiki/2024_in_Nicaragua" target="_blank"><span
+                      class="icon-info"></span></a></li>
               </ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div><!-- END COLORLIB-MAIN -->
-	</div><!-- END COLORLIB-PAGE -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- END COLORLIB-MAIN -->
+  </div><!-- END COLORLIB-PAGE -->
 
   <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+      <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+      <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+        stroke="#F96D00" />
+    </svg></div>
 
 
   <script src="js/jquery.min.js"></script>
@@ -96,9 +168,11 @@
   <script src="js/bootstrap-datepicker.js"></script>
   <script src="js/jquery.timepicker.min.js"></script>
   <script src="js/scrollax.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
-    
-  </body>
+
+</body>
+
 </html>
