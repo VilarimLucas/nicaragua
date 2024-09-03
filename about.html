@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Explorer - Free Bootstrap 4 Template by Colorlib</title>
+  <title>Sobre | Nicarágua</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -27,10 +27,12 @@
   <link rel="stylesheet" href="css/flaticon.css">
   <link rel="stylesheet" href="css/icomoon.css">
   <link rel="stylesheet" href="css/style.css">
+
+  <link href="images/favicon.png" rel="icon">
+
 </head>
 
 <body>
-
 
   <!-- Botão de Música -->
   <style>
@@ -42,7 +44,7 @@
       z-index: 1000;
     }
   </style>
-  <audio id="background-music" autoplay loop>
+  <audio id="background-music" loop>
     <source src="audio/07 los chicos de ayer.mp3" type="audio/mpeg">
     Seu navegador não suporta o elemento de áudio.
   </audio>
@@ -69,22 +71,8 @@
         icon.classList.add("icon-play-circle");
       }
     }
-
-    // Tentar reproduzir a música automaticamente quando a página carrega
-    window.addEventListener('load', function () {
-      var music = document.getElementById("background-music");
-      var playPromise = music.play();
-
-      if (playPromise !== undefined) {
-        playPromise.then(_ => {
-          // Reproduziu automaticamente
-        }).catch(error => {
-          // Autoplay foi bloqueado, mostre controles para o usuário
-          console.log("Autoplay bloqueado. O usuário precisa interagir para reproduzir a música.");
-        });
-      }
-    });
   </script>
+
 
   <div id="colorlib-page">
     <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
@@ -92,12 +80,12 @@
       <h1 id="colorlib-logo"><a href="index.html">Nicarágua<span>.</span></a></h1>
       <nav id="colorlib-main-menu" role="navigation">
         <ul>
-          <li class="colorlib-active"><a href="index.html">Início</a></li>
+          <li><a href="index.html">Início</a></li>
+          <li  class="colorlib-active"><a href="about.html">Sobre</a></li>
           <li><a href="photography.html">Fotografia</a></li>
           <li><a href="travel.html">Plano de Viagens</a></li>
           <li><a href="fashion.html">Danças</a></li>
           <li><a href="fashion.html">Economia</a></li>
-          <li><a href="about.html">Sobre</a></li>
           <li><a href="contact.html">Comidas</a></li>
         </ul>
       </nav>
