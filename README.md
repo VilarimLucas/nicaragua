@@ -22,6 +22,7 @@ Este projeto é uma página web dedicada à Nicarágua, destacando sua cultura, 
 ├── js/                        # Scripts JS usados na página
 ├── docs/                      # PDFs e documentos para visualização nos modais
 └── index.html                 # Página principal do site
+```
 
 ## 🛠️ **Tecnologias Utilizadas**
 
