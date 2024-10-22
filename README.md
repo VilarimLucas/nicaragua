@@ -58,3 +58,4 @@ O site possui um modal que permite abrir PDFs em tela cheia. Para acessar, basta
 1. Clone este repositório:
    ```bash
    git clone https://github.com/seu-usuario/seu-repositorio.git
+   ---
