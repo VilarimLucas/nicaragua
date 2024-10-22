@@ -61,3 +61,25 @@ O site possui um modal que permite abrir PDFs em tela cheia. Para acessar, basta
    git clone https://github.com/VilarimLucas/nicaragua.git
    ```
 
+2. Navegue até o diretório do projeto:
+   ```bash
+   cd nicaragua
+   ```
+   3. Abra o arquivo `index.html` diretamente no navegador ou use uma extensão como **Live Server** no VSCode.
+
+   ---
+   
+   ## 🌐 **Links e Recursos Externos**
+   
+   - [Bootstrap](https://getbootstrap.com/)
+   - [jQuery](https://jquery.com/)
+   - [Bootstrap Icons](https://icons.getbootstrap.com/)
+   - [Google Fonts](https://fonts.google.com/)
+   
+   ---
+   
+   ## 📝 **Licença**
+   
+   Este projeto é baseado em um template da [Colorlib](https://colorlib.com/) e segue a licença **CC BY 3.0**. Modificações adicionais foram realizadas para personalização do site.
+
+   
