@@ -24,64 +24,27 @@
 </head>
 
 <body>
-
-	<!-- Botão de Música -->
-	<style>
-		/* Estilização opcional para o botão de controle */
-		.audio-control {
-			position: fixed;
-			bottom: 20px;
-			right: 20px;
-			z-index: 1000;
-		}
-	</style>
-
-	<audio id="background-music" loop>
-		<source src="audio/07 los chicos de ayer.mp3" type="audio/mpeg">
-		Seu navegador não suporta o elemento de áudio.
-	</audio>
-
-	<!-- Controles de Áudio (Opcional) -->
-	<div class="audio-control">
-		<button class="btn btn-primary" onclick="toggleMusic()">
-			<span id="music-icon" class="icon-play-circle"></span> Música
-		</button>
-	</div>
-
-	<!-- Script para Controlar a Música -->
-	<script>
-		function toggleMusic() {
-			var music = document.getElementById("background-music");
-			var icon = document.getElementById("music-icon");
-			if (music.paused) {
-				music.play();
-				icon.classList.remove("icon-play-circle");
-				icon.classList.add("icon-pause-circle");
-			} else {
-				music.pause();
-				icon.classList.remove("icon-pause-circle");
-				icon.classList.add("icon-play-circle");
-			}
-		}
-	</script>
-
-
-	<div id="colorlib-page">
-		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+    <div id="colorlib-page">
+        <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 		<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
 			<h1 id="colorlib-logo"><a href="index.html">Nicarágua<span>.</span></a></h1>
 			<nav id="colorlib-main-menu" role="navigation">
 				<ul>
-					<li class="colorlib-active"><a href="index.html">Início</a></li>
+					<li><a href="index.html">Início</a></li>
 					<li><a href="about.html">Sobre</a></li>
 					<li><a href="photography.html">Fotografia</a></li>
-					<li><a href="#" class="open-modal" data-doc="docs/cultura.pdf" data-toggle="modal" data-target="#presentationModal">Cultura</a></li>
-					<li><a href="#" class="open-modal" data-doc="docs/dancas.pdf" data-toggle="modal" data-target="#presentationModal">Danças</a></li>			
-					<li><a href="#" class="open-modal" data-doc="docs/comidas.pdf" data-toggle="modal" data-target="#presentationModal">Comidas</a></li>
+					<li><a href="#" class="open-modal" data-doc="docs/cultura.pdf" data-toggle="modal"
+							data-target="#presentationModal">Cultura</a></li>
+					<li><a href="#" class="open-modal" data-doc="docs/dancas.pdf" data-toggle="modal"
+							data-target="#presentationModal">Danças</a></li>
+					<li><a href="#" class="open-modal" data-doc="docs/comidas.pdf" data-toggle="modal"
+							data-target="#presentationModal">Comidas</a></li>
 
-					<li><a href="#" class="open-modal" data-doc="docs/plano-viagem.pdf" data-toggle="modal" data-target="#presentationModal">Plano de Viagens</a></li>
-					<li><a href="#" class="open-modal" data-doc="docs/economia.pdf" data-toggle="modal" data-target="#presentationModal">Economia</a></li>
-					<li><a href="geografia.html">Geografia</a></li>
+					<li><a href="#" class="open-modal" data-doc="docs/plano-viagem.pdf" data-toggle="modal"
+							data-target="#presentationModal">Plano de Viagens</a></li>
+					<li><a href="#" class="open-modal" data-doc="docs/economia.pdf" data-toggle="modal"
+							data-target="#presentationModal">Economia</a></li>
+					<li class="colorlib-active"><a href="geografia.html">Geografia</a></li>
 				</ul>
 			</nav>
 
@@ -99,9 +62,9 @@
 				</ul-->
 			</div>
 		</aside> <!-- END COLORLIB-ASIDE -->
-
-		<div id="colorlib-main">
-			<div class="hero-wrap js-fullheight" style="background-image: url(images/bg_1.jpg);"
+    
+        <div id="colorlib-main">
+			<!-- <div class="hero-wrap js-fullheight" style="background-image: url(images/bg_1.jpg);"
 				data-stellar-background-ratio="0.5">
 				<div class="overlay"></div>
 				<div class="js-fullheight d-flex justify-content-center align-items-center">
@@ -118,33 +81,32 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 			
 			<section class="ftco-section">
 				<div class="container">
 					<div class="row justify-content-center mb-5 pb-2">
 						<div class="col-md-7 heading-section text-center ftco-animate">
-							<h2 class="mb-4">Artigos</h2>
-							<p>Abaixo segue notícias dos principais portais de informação da Nicarágua</p>
+							<h2 class="mb-4">Geografia</h2>
+							<p>Abaixo segue notícias da Geografia da Nicarágua</p>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-4">
+						<!-- <div class="col-md-4">
 							<div class="blog-entry ftco-animate">
 								<a href="#" class="img img-2" style="background-image: url(images/image_1.jpg);"></a>
 								<div class="text text-2 pt-2 mt-3">
 									<span class="category mb-3 d-block"><a href="#">Economia</a></span>
 									<h3 class="mb-4"><a
-											href="https://www.laprensani.com/2024/08/29/economia/3372348-materiales-de-construccion-dan-clara-senal-de-estabilizacion-en-las-alzas-de-sus-precios">Materiales
-											de construcción dan clara senâl de estabilización en las alzas de sus
-											precios</a></h3>
-									<p class="mb-4">En julio varios productos del sector construcción se abarataron,
-										mientras otros subieron. Asi se movieron los principales capitulos</p>
+											href="https://www.laprensani.com/2024/08/29/economia/3372348-materiales-de-construccion-dan-clara-senal-de-estabilizacion-en-las-alzas-de-sus-precios">Materiais
+											de construção mostram um sinal claro de estabilização nos aumentos de seus preços</a></h3>
+									<p class="mb-4">Em julho, vários produtos do setor da construção ficaram mais baratos,
+										enquanto outros subiram. Foi assim que os capítulos principais se moveram</p>
 									<div class="author mb-4 d-flex align-items-center">
 										<a href="#" class="img" style="background-image: url(images/person_2.jpg);"></a>
 										<div class="ml-3 info">
 											<span>Escrito por</span>
-											<h3><a href="https://www.laprensani.com">La Prensa</a>, <span>Ago. 29,
+											<h3><a href="https://www.laprensani.com">A imprensa</a>, <span>Ago. 29,
 													2024</span></h3>
 										</div>
 									</div>
@@ -155,7 +117,7 @@
 												<span><i class="icon-eye"></i>100</span>
 												<span><i class="icon-comment"></i>5</span>
 											</p>
-										</div -->
+										</div
 										<div class="half">
 											<p><a href="https://www.laprensani.com/2024/08/29/economia/3372348-materiales-de-construccion-dan-clara-senal-de-estabilizacion-en-las-alzas-de-sus-precios"
 													class="btn py-2">Continue Lendo <span
@@ -164,24 +126,20 @@
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="col-md-4">
+						</div> -->
+						<!-- <div class="col-md-4">
 							<div class="blog-entry ftco-animate">
 								<a href="#" class="img img-2" style="background-image: url(images/image_2.jpg);"></a>
 								<div class="text text-2 pt-2 mt-3">
 									<span class="category mb-3 d-block"><a href="#">Economia</a></span>
 									<h3 class="mb-4"><a
-											href="https://www.laprensani.com/2024/08/28/economia/3371124-en-medio-de-las-amenazas-que-enfrenta-la-produccion-de-arroz-el-regimen-le-cerro-las-organizaciones">Ortega
-											pone en riesgo la producción de arroz en Nicaragua, tras el cierre de sus
-											dos organizaciones</a></h3>
-									<p class="mb-4">Nicaragua produce cerca de la mitad del arroz de la región, pero las
-										importaciones de arroz más barato amenazan con acabar con la producción regional
-									</p>
+											href="https://www.laprensani.com/2024/08/28/economia/3371124-en-medio-de-las-amenazas-que-enfrenta-la-produccion-de-arroz-el-regimen-le-cerro-las-organizaciones">Ortega coloca em risco a produção de arroz na Nicarágua, após o fechamento de suas duas organizações</a></h3>
+									<p class="mb-4">A Nicarágua produz cerca de metade do arroz da região, mas as importações de arroz mais barato ameaçam acabar com a produção regional</p>
 									<div class="author mb-4 d-flex align-items-center">
 										<a href="#" class="img" style="background-image: url(images/person_2.jpg);"></a>
 										<div class="ml-3 info">
 											<span>Escrito por</span>
-											<h3><a href="#">La Prensa</a>, <span>Ago. 28, 2024</span></h3>
+											<h3><a href="#">A imprensa</a>, <span>Ago. 28, 2024</span></h3>
 										</div>
 									</div>
 									<div class="meta-wrap align-items-center">
@@ -191,7 +149,7 @@
 												<span><i class="icon-eye"></i>100</span>
 												<span><i class="icon-comment"></i>5</span>
 											</p>
-										</div-->
+										</div
 										<div class="half">
 											<p><a href="https://www.laprensani.com/2024/08/28/economia/3371124-en-medio-de-las-amenazas-que-enfrenta-la-produccion-de-arroz-el-regimen-le-cerro-las-organizaciones"
 													class="btn py-2">Continue Lendo <span
@@ -200,23 +158,20 @@
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="col-md-4">
+						</div> -->
+						<!-- <div class="col-md-4">
 							<div class="blog-entry ftco-animate">
 								<a href="#" class="img img-2" style="background-image: url(images/image_13.jpg);"></a>
 								<div class="text text-2 pt-2 mt-3">
 									<span class="category mb-3 d-block"><a href="#">Economia</a></span>
 									<h3 class="mb-4"><a
-											href="https://www.laprensani.com/2024/08/28/economia/3371578-por-que-la-comida-esta-tan-cara-en-nicaragua-y-centroamerica-y-que-hacer-para-bajarlos-esto-dice-el-bm">¿Por
-											qué la comida está tan cara en Centroamérica y qué hacer para bajar los
-											precios? Esto dice el BM</a></h3>
-									<p class="mb-4">Estas son las medidas que recomienda el Banco Mundial (BM) para
-										bajar los elevados precios de los productos de la canastra básica</p>
+											href="https://www.laprensani.com/2024/08/28/economia/3371578-por-que-la-comida-esta-tan-cara-en-nicaragua-y-centroamerica-y-que-hacer-para-bajarlos-esto-dice-el-bm">Por que os alimentos são tão caros na América Central e o que fazer para baixar os preços? Isto é o que a BM diz</a></h3>
+									<p class="mb-4">Estas são as medidas recomendadas pelo Banco Mundial (BM) para baixar os altos preços dos produtos da cesta básica</p>
 									<div class="author mb-4 d-flex align-items-center">
 										<a href="#" class="img" style="background-image: url(images/person_2.jpg);"></a>
 										<div class="ml-3 info">
 											<span>Escrito por</span>
-											<h3><a href="#">La Prensa</a>, <span>Ago. 28, 2024</span></h3>
+											<h3><a href="#">A imprensa</a>, <span>Ago. 28, 2024</span></h3>
 										</div>
 									</div>
 									<div class="meta-wrap align-items-center">
@@ -226,7 +181,7 @@
 												<span><i class="icon-eye"></i>100</span>
 												<span><i class="icon-comment"></i>5</span>
 											</p>
-										</div -->
+										</div
 										<div class="half">
 											<p><a href="https://www.laprensani.com/2024/08/28/economia/3371578-por-que-la-comida-esta-tan-cara-en-nicaragua-y-centroamerica-y-que-hacer-para-bajarlos-esto-dice-el-bm"
 													class="btn py-2">Continue Lendo <span
@@ -242,7 +197,7 @@
 								<div class="text text-2 pt-2 mt-3">
 									<span class="category mb-3 d-block"><a href="#">Plano de Viajem</a></span>
 									<h3 class="mb-4"><a href="#">10 lugares mais incríveis</a></h3>
-									<!-- <p class="mb-4">Mesmo o todo-poderoso Apontador não tem controle sobre os textos cegos, é um quase</p> -->
+									<!-- <p class="mb-4">Mesmo o todo-poderoso Apontador não tem controle sobre os textos cegos, é um quase</p>
 									<p class="mb-4">a Nicarágua, explore Granada e sua arquitetura colonial, León para arte e história, e o mercado de Masaya para artesanato. A Ilha de Ometepe oferece tradições locais, e San Juan del Sur é vibrante com festivais. A Catedral de León e Matagalpa com sua tradição cafeeira também são imperdíveis.</p>
 									<div class="author mb-4 d-flex align-items-center">
 										<a href="#" class="img" style="background-image: url(images/person_1.jpg);"></a>
@@ -451,16 +406,16 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> -->
 						<div class="col-md-4">
 							<div class="blog-entry ftco-animate">
-								<a href="#" class="img img-2" style="background-image: url(images/image_11.jpg);"></a>
+								<a href="#" class="img img-2" style="background-image: url(images/mapa2.jpg);"></a>
 								<div class="text text-2 pt-2 mt-3">
-									<span class="category mb-3 d-block"><a href="#">Fashion</a></span>
+									<!-- <span class="category mb-3 d-block"><a href="#">Fashion</a></span> -->
 									<h3 class="mb-4"><a href="#">10 Tips to Become a Fashion Pro</a></h3>
 									<p class="mb-4">Even the all-powerful Pointing has no control about the blind texts
 										it is an almost</p>
-									<div class="author mb-4 d-flex align-items-center">
+									<!-- <div class="author mb-4 d-flex align-items-center">
 										<a href="#" class="img" style="background-image: url(images/person_2.jpg);"></a>
 										<div class="ml-3 info">
 											<span>Written by</span>
@@ -479,19 +434,19 @@
 											<p><a href="#" class="btn py-2">Continue Lendo <span
 														class="ion-ios-arrow-forward"></span></a></p>
 										</div>
-									</div>
+									</div> -->
 								</div>
 							</div>
-						</div>
+						</div> 
 						<div class="col-md-4">
 							<div class="blog-entry ftco-animate">
-								<a href="#" class="img img-2" style="background-image: url(images/image_12.jpg);"></a>
+								<a href="#" class="img img-2" style="background-image: url(images/mapa.jpeg);"></a>
 								<div class="text text-2 pt-2 mt-3">
-									<span class="category mb-3 d-block"><a href="#">Photography</a></span>
+									<!-- <span class="category mb-3 d-block"><a href="#">Photography</a></span> -->
 									<h3 class="mb-4"><a href="#">Visit the Most Amazing Place in North America</a></h3>
 									<p class="mb-4">Even the all-powerful Pointing has no control about the blind texts
 										it is an almost</p>
-									<div class="author mb-4 d-flex align-items-center">
+									<!-- <div class="author mb-4 d-flex align-items-center">
 										<a href="#" class="img" style="background-image: url(images/person_3.jpg);"></a>
 										<div class="ml-3 info">
 											<span>Written by</span>
@@ -509,144 +464,142 @@
 										<div class="half">
 											<p><a href="#" class="btn py-2">Continue Lendo <span
 														class="ion-ios-arrow-forward"></span></a></p>
-										</div>
-									</div>
-								</div>
+													</div>
+												</div>
+											</div> -->
 							</div>
 						</div>
 					</div>
 				</div>
 			</section>
 
-			<footer class="ftco-footer ftco-bg-dark ftco-section">
-				<div class="container px-md-5">
-					<div class="row mb-5">
-						<div class="col-md">
-							<div class="ftco-footer-widget mb-4 ml-md-4">
-								<h2 class="ftco-heading-2">Categorias</h2>
-								<ul class="list-unstyled categories">
-									<li><a href="#">Fotografias <span>(6)</span></a></li>
-									<li><a href="#">Fashion <span>(8)</span></a></li>
-									<li><a href="#">Tecnologia <span>(2)</span></a></li>
-									<li><a href="#">Viajem <span>(2)</span></a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-md">
-							<div class="ftco-footer-widget mb-4">
-								<h2 class="ftco-heading-2">Archives</h2>
-								<ul class="list-unstyled categories">
-									<li><a href="#">Outubro 2018 <span>(6)</span></a></li>
-									<li><a href="#">Setembro 2018 <span>(6)</span></a></li>
-									<li><a href="#">Agosto 2018 <span>(8)</span></a></li>
-									<li><a href="#">Julho 2018 <span>(2)</span></a></li>
-									<li><a href="#">Junho 2018 <span>(7)</span></a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-md">
-							<div class="ftco-footer-widget mb-4">
-								<h2 class="ftco-heading-2">Duvidas?</h2>
-								<div class="block-23 mb-3">
-									<ul>
-										<li><span class="icon icon-map-marker"></span><span class="text">203 Fake St.
-												Mountain View, San Francisco, California, USA</span></li>
-										<li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392
-													3929 210</span></a></li>
-										<li><a href="#"><span class="icon icon-envelope"></span><span
-													class="text">info@yourdomain.com</span></a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-
-							<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-								Copyright &copy;
-								<script>document.write(new Date().getFullYear());</script> All rights reserved | This
-								template is made with <i class="icon-heart" aria-hidden="true"></i> by <a
-									href="https://colorlib.com" target="_blank">Colorlib</a>
-								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-							</p>
-						</div>
-					</div>
-				</div>
-			</footer>
-		</div><!-- END COLORLIB-MAIN -->
-	</div><!-- END COLORLIB-PAGE -->
-
-	<!-- loader -->
-	<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
-			<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
-			<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
-				stroke="#F96D00" />
-		</svg></div>
-
-
-<!-- Modal para Visualizar Apresentações -->
-<div class="modal fade" id="presentationModal" tabindex="-1" role="dialog" aria-labelledby="presentationModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="presentationModalLabel">Visualizador</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+    <footer class="ftco-footer ftco-bg-dark ftco-section">
+        <div class="container px-md-5">
+            <div class="row mb-5">
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-4 ml-md-4">
+                        <h2 class="ftco-heading-2">Categorias</h2>
+                        <ul class="list-unstyled categories">
+                            <li><a href="#">Fotografias <span>(6)</span></a></li>
+                            <li><a href="#">Fashion <span>(8)</span></a></li>
+                            <li><a href="#">Tecnologia <span>(2)</span></a></li>
+                            <li><a href="#">Viajem <span>(2)</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">Archives</h2>
+                        <ul class="list-unstyled categories">
+                            <li><a href="#">Outubro 2018 <span>(6)</span></a></li>
+                            <li><a href="#">Setembro 2018 <span>(6)</span></a></li>
+                            <li><a href="#">Agosto 2018 <span>(8)</span></a></li>
+                            <li><a href="#">Julho 2018 <span>(2)</span></a></li>
+                            <li><a href="#">Junho 2018 <span>(7)</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">Duvidas?</h2>
+                        <div class="block-23 mb-3">
+                            <ul>
+                                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St.
+                                        Mountain View, San Francisco, California, USA</span></li>
+                                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392
+                                            3929 210</span></a></li>
+                                <li><a href="#"><span class="icon icon-envelope"></span><span
+                                            class="text">info@yourdomain.com</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="modal-body">
-                <!-- Visualizador de PDF/PPT -->
-                <iframe id="presentationFrame" src="" width="100%" height="500px"></iframe>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                <button type="button" class="btn btn-primary" onclick="openFullScreen()">Tela cheia</button>
+            <div class="row">
+                <div class="col-md-12">
+
+                    <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;
+                        <script>document.write(new Date().getFullYear());</script> All rights reserved | This
+                        template is made with <i class="icon-heart" aria-hidden="true"></i> by <a
+                            href="https://colorlib.com" target="_blank">Colorlib</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
-</div>
+    </footer>
+</div><!-- END COLORLIB-MAIN -->
+</div><!-- END COLORLIB-PAGE -->
 
-<!-- JavaScript para controlar a exibição do modal -->
-<script>
-    document.querySelectorAll('.open-modal').forEach(item => {
-        item.addEventListener('click', event => {
-            const docUrl = event.currentTarget.getAttribute('data-doc');
-            document.getElementById('presentationFrame').src = docUrl;
-        });
-    });
-
-    function openFullScreen() {
-        const elem = document.getElementById('presentationFrame');
-        if (elem.requestFullscreen) {
-            elem.requestFullscreen();
-        } else if (elem.webkitRequestFullscreen) { /* Safari */
-            elem.webkitRequestFullscreen();
-        } else if (elem.msRequestFullscreen) { /* IE11 */
-            elem.msRequestFullscreen();
-        }
-    }
-</script>
+<!-- loader -->
+<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+    <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+    <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+        stroke="#F96D00" />
+</svg></div>
 
 
-	<script src="js/jquery.min.js"></script>
-	<script src="js/jquery-migrate-3.0.1.min.js"></script>
-	<script src="js/popper.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.easing.1.3.js"></script>
-	<script src="js/jquery.waypoints.min.js"></script>
-	<script src="js/jquery.stellar.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/aos.js"></script>
-	<script src="js/jquery.animateNumber.min.js"></script>
-	<script src="js/bootstrap-datepicker.js"></script>
-	<script src="js/jquery.timepicker.min.js"></script>
-	<script src="js/scrollax.min.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-	<script src="js/google-map.js"></script>
-	<script src="js/main.js"></script>
+	<!-- Modal para Visualizar Apresentações -->
+	<div class="modal fade" id="presentationModal" tabindex="-1" role="dialog" aria-labelledby="presentationModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="presentationModalLabel">Visualizador</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<!-- Visualizador de PDF/PPT -->
+					<iframe id="presentationFrame" src="" width="100%" height="500px"></iframe>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+					<button type="button" class="btn btn-primary" onclick="openFullScreen()">Tela cheia</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- JavaScript para controlar a exibição do modal -->
+	<script>
+		document.querySelectorAll('.open-modal').forEach(item => {
+			item.addEventListener('click', event => {
+				const docUrl = event.currentTarget.getAttribute('data-doc');
+				document.getElementById('presentationFrame').src = docUrl;
+			});
+		});
+
+		function openFullScreen() {
+			const elem = document.getElementById('presentationFrame');
+			if (elem.requestFullscreen) {
+				elem.requestFullscreen();
+			} else if (elem.webkitRequestFullscreen) { /* Safari */
+				elem.webkitRequestFullscreen();
+			} else if (elem.msRequestFullscreen) { /* IE11 */
+				elem.msRequestFullscreen();
+			}
+		}
+	</script>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-migrate-3.0.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/jquery.stellar.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/jquery.animateNumber.min.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script src="js/jquery.timepicker.min.js"></script>
+<script src="js/scrollax.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+<script src="js/google-map.js"></script>
+<script src="js/main.js"></script>
 
 </body>
-
-</html>
