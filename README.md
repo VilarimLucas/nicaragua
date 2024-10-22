@@ -1,4 +1,4 @@
-# Site - Nicarágua 🇳🇮
+# Site - Nicarágua - Feira das Nações 3ºA - Solon Borges dos Reis
 
 Este projeto é uma página web dedicada à Nicarágua, destacando sua cultura, geografia, economia, turismo e música, com integração de áudios e modais para apresentação de conteúdo adicional.
 
