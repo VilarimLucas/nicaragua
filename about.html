@@ -6,72 +6,92 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+  <!-- Bootstrap Icons (via CDN) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
+    rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
-
   <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
   <link rel="stylesheet" href="css/animate.css">
-
   <link rel="stylesheet" href="css/owl.carousel.min.css">
   <link rel="stylesheet" href="css/owl.theme.default.min.css">
   <link rel="stylesheet" href="css/magnific-popup.css">
-
   <link rel="stylesheet" href="css/aos.css">
-
   <link rel="stylesheet" href="css/ionicons.min.css">
-
   <link rel="stylesheet" href="css/bootstrap-datepicker.css">
   <link rel="stylesheet" href="css/jquery.timepicker.css">
-
-
   <link rel="stylesheet" href="css/flaticon.css">
   <link rel="stylesheet" href="css/icomoon.css">
   <link rel="stylesheet" href="css/style.css">
-
   <link href="images/favicon.png" rel="icon">
-
 </head>
 
 <body>
 
-  <!-- Botão de Música -->
-  <style>
-    /* Estilização opcional para o botão de controle */
-    .audio-control {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 1000;
-    }
-  </style>
-  <audio id="background-music" loop>
-    <source src="audio/07 los chicos de ayer.mp3" type="audio/mpeg">
-    Seu navegador não suporta o elemento de áudio.
-  </audio>
 
-  <!-- Controles de Áudio (Opcional) -->
-  <div class="audio-control">
-    <button class="btn btn-primary" onclick="toggleMusic()">
-      <span id="music-icon" class="icon-play-circle"></span> Música
-    </button>
+
+  <!-- Playlist de Música -->
+  <div class="container-fluid position-fixed bottom-0 end-0 p-3"
+    style="max-width: 350px; z-index: 9999; bottom: 0; right: 0;">
+    <div class="card shadow-sm">
+      <div class="card-header bg-primary text-white text-center">
+        <h5 class="mb-0">Músicas Nicaragua</h5>
+      </div>
+      <div class="card-body overflow-auto" style="max-height: 300px;">
+        <div id="playlist-container" class="list-group"></div>
+      </div>
+    </div>
   </div>
 
-  <!-- Script para Controlar a Música -->
+  <!-- Script para carregar e controlar a playlist -->
   <script>
-    function toggleMusic() {
-      var music = document.getElementById("background-music");
-      var icon = document.getElementById("music-icon");
-      if (music.paused) {
-        music.play();
-        icon.classList.remove("icon-play-circle");
-        icon.classList.add("icon-pause-circle");
+    const audioFiles = [
+      { name: "Hino Nacional da Nicaragua", src: "audio/hino.mp3" },
+      { name: "Los Chicos de Ayer", src: "audio/07 los chicos de ayer.mp3" }
+    ];
+
+    function renderPlaylist() {
+      const container = document.getElementById('playlist-container');
+      audioFiles.forEach((file, index) => {
+        const audioItem = document.createElement('div');
+        audioItem.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center');
+        audioItem.innerHTML = `
+               <span>${file.name}</span>
+               <button class="btn btn-sm btn-outline-primary" id="play-pause-${index}" onclick="togglePlay(${index})">
+                   <i class="bi bi-play-circle" id="icon-${index}"></i>
+               </button>
+               <audio id="audio-${index}" src="${file.src}"></audio>
+           `;
+        container.appendChild(audioItem);
+      });
+    }
+
+    function togglePlay(index) {
+      const audio = document.getElementById(`audio-${index}`);
+      const icon = document.getElementById(`icon-${index}`);
+      if (audio.paused) {
+        stopAllAudios();
+        audio.play();
+        icon.classList.replace('bi-play-circle', 'bi-pause-circle');
       } else {
-        music.pause();
-        icon.classList.remove("icon-pause-circle");
-        icon.classList.add("icon-play-circle");
+        audio.pause();
+        icon.classList.replace('bi-pause-circle', 'bi-play-circle');
       }
     }
+
+    function stopAllAudios() {
+      audioFiles.forEach((_, index) => {
+        const audio = document.getElementById(`audio-${index}`);
+        const icon = document.getElementById(`icon-${index}`);
+        audio.pause();
+        audio.currentTime = 0;
+        icon.classList.replace('bi-pause-circle', 'bi-play-circle');
+      });
+    }
+
+    window.onload = renderPlaylist;
   </script>
+
 
 
   <div id="colorlib-page">
@@ -81,7 +101,7 @@
       <nav id="colorlib-main-menu" role="navigation">
         <ul>
           <li><a href="index.html">Início</a></li>
-          <li  class="colorlib-active"><a href="about.html">Sobre</a></li>
+          <li class="colorlib-active"><a href="about.html">Sobre</a></li>
           <li><a href="photography.html">Fotografia</a></li>
           <li><a href="#" class="open-modal" data-doc="docs/cultura.pdf" data-toggle="modal"
               data-target="#presentationModal">Cultura</a></li>
